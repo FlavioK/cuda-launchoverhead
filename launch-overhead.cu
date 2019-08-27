@@ -135,7 +135,7 @@ static double convertGpuToCpu(uint64_t gpuStartTime, uint64_t gpuTime, double sc
 static int writeResults(gpu_data_t *gpuData){
 	double cpuStart, gpuStart, launchOh, gpuEnd;
 	printf("Scale: %f, CpuStart: %f, GpuStart: %f\n",gpuData->scale, gpuData->host_ns, (double)gpuData->device_ns);
-	printf("Spinduration: %d\n", SPIN_DURATION);
+	printf("Spinduration: %d ns\n", SPIN_DURATION);
 	printf("STREAM_SYNC(): %s\n", STREAM_SYNC_ON);
 	printf("|%-6.6s|%-4.4s|%-15.15s|%-15.15s|%-15.15s|%-15.15s|%-13.13s|\n","Stream","Rep.","CPU start [us]", "GPU start [us]", "Launch OH [us]", "GPU end [us]", "GPU dur. [us]");
 	for(int stream = 0; stream < NOF_STREAMS; stream++){
