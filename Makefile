@@ -34,7 +34,7 @@ clean:
 	rm -rf obj
 
 target_build: deploy
-	ssh -t $(REMOTE_TARGET) "cd $(REMOTE_WORKING_DIR) && make clean && make all"
+	ssh -t $(REMOTE_TARGET) "cd $(REMOTE_WORKING_DIR) && make all"
 
 target_run: target_build
 	ssh -t $(REMOTE_TARGET) "cd $(REMOTE_WORKING_DIR) && ./$(EXE)"
