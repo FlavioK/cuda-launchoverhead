@@ -40,7 +40,7 @@ target_run: target_build
 	ssh -t $(REMOTE_TARGET) "cd $(REMOTE_WORKING_DIR) && ./$(EXE)"
 
 deploy:
-	rsync -avz . ${REMOTE_TARGET}:${REMOTE_WORKING_DIR}
+	rsync -avz --exclude '.*' --exclude 'README.md' --exclude 'tags' . ${REMOTE_TARGET}:${REMOTE_WORKING_DIR}
 
 target_clean:
 	ssh $(REMOTE_TARGET) "cd $(REMOTE_WORKING_DIR) && make clean"
