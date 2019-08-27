@@ -23,7 +23,7 @@ all: $(EXE)
 obj:
 	mkdir $@
 
-$(ODIR)/%.o: %.cu $(DEPS) obj
+$(ODIR)/%.o: %.cu $(DEPS) | obj
 		nvcc -dc -o $@ $< $(NVCCFLAGS)
 
 $(EXE): $(OBJ)
