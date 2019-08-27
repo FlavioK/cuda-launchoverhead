@@ -1,4 +1,4 @@
-#Launch overhead measurements
+# Launch overhead measurements
 This is a small experiment to measure the launch overhead of CUDA kernels on
 the Jetson-TX2. Mulitple spinning kernels are launched from different streams.
 To measure the overhead the time before the launch is recorded on the CPU.
